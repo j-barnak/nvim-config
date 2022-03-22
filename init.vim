@@ -10,7 +10,7 @@ autocmd BufEnter * if winnr('$') == 1 && exists('b:NERDTree') && b:NERDTree.isTa
 autocmd VimEnter * NERDTree | wincmd p
 
 " Where the cool snippets are loaded
-let g:UltiSnipsSnippetDirectories=["UltiSnips", "markdown.snippets"]
+let g:UltiSnipsSnippetDirectories=["UltiSnips", "snippets"]
 
 call plug#begin()
 Plug 'SirVer/ultisnips'
@@ -27,12 +27,10 @@ Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
 call plug#end()
 
 " Plugin Snipping Stuff
-let g:UltiSnipsExpandTrigger="<tab>"
+let g:UltiSnipsExpandTrigger="<c-g>"
 let g:UltiSnipsJumpForwardTrigger="<c-b>"
 let g:UltiSnipsJumpBackwardTrigger="<c-z>"
 
-" If you want :UltiSnipsEdit to split your window.
-let g:UltiSnipsEditSplit="vertical"
 
 " Spaces & Tabs {{{
 set tabstop=4       " number of visual spaces per TAB
