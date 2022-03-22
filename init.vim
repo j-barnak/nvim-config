@@ -10,6 +10,8 @@ autocmd BufEnter * if winnr('$') == 1 && exists('b:NERDTree') && b:NERDTree.isTa
 autocmd VimEnter * NERDTree | wincmd p
 
 call plug#begin()
+Plug 'tpope/vim-commentary'
+Plug 'mattn/emmet-vim'
 Plug 'tpope/vim-fugitive'
 Plug '/wbthomason/packer.nvim'
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
