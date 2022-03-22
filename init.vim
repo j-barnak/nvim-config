@@ -9,7 +9,12 @@ autocmd BufEnter * if bufname('#') =~ 'NERD_tree_\d\+' && bufname('%') !~ 'NERD_
 autocmd BufEnter * if winnr('$') == 1 && exists('b:NERDTree') && b:NERDTree.isTabTree() | quit | endif
 autocmd VimEnter * NERDTree | wincmd p
 
+" Where the cool snippets are loaded
+let g:UltiSnipsSnippetDirectories=["UltiSnips", "markdown.snippets"]
+
 call plug#begin()
+Plug 'SirVer/ultisnips'
+Plug 'honza/vim-snippets'
 Plug 'tpope/vim-commentary'
 Plug 'mattn/emmet-vim'
 Plug 'tpope/vim-fugitive'
@@ -20,6 +25,14 @@ Plug 'preservim/nerdtree'
 Plug 'morhetz/gruvbox'
 Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
 call plug#end()
+
+" Plugin Snipping Stuff
+let g:UltiSnipsExpandTrigger="<tab>"
+let g:UltiSnipsJumpForwardTrigger="<c-b>"
+let g:UltiSnipsJumpBackwardTrigger="<c-z>"
+
+" If you want :UltiSnipsEdit to split your window.
+let g:UltiSnipsEditSplit="vertical"
 
 " Spaces & Tabs {{{
 set tabstop=4       " number of visual spaces per TAB
@@ -46,7 +59,7 @@ set ignorecase      " ignore case when searching
 set smartcase       " ignore case if search pattern is lower case
                     " case-sensitive otherwise
 
-nnoremap bb <c-w>w 
+nnoremap ee <c-w>w 
 
 syntax enable                " enable syntax processing
 "better high lighting
