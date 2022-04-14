@@ -1,0 +1,14 @@
+snippet asm "Boiler Plate" 
+          global    _start
+
+          section   .text
+_start:   
+          ;; begin code here ;;
+
+		  ;; jump to end     ;;
+		  jmp exit
+exit:
+          mov       rax, 60        ; code for system call sys_exit()     
+          xor       rdi, rdi       ; rdi is the error code reg  
+          syscall   
+endsnippet
